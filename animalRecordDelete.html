@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts (Include your font links here) -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/header.css" />
+
+    <title>AR Delete</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <!-- Left Section-->
+      <div class="left-section">
+        <img class="PAH-logo" src="images/logo.jpg" alt="" />
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section">
+        <!-- Add content if needed -->
+      </div>
+
+      <!-- Right section -->
+      <div class="right-section">
+        <!-- Add content if needed -->
+      </div>
+    </header>
+
+    <main>
+      <h2>Delete Animal Record</h2>
+      <form id="deleteAnimalRecordForm">
+        <label for="animalIDToDelete">Animal ID:</label>
+        <input
+          type="number"
+          id="animalIDToDelete"
+          name="animalIDToDelete"
+          placeholder="Enter Animal Record ID"
+          min="1"
+        />
+
+        <br />
+        <br />
+        <button type="button" onclick="deleteAnimalRecord()">Delete</button>
+
+        <script>
+          function deleteAnimalRecord() {
+            // Implement the logic for deleting medical records
+            // Example: alert("Medical record deleted!");
+          }
+        </script>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/header.css" />
+
+    <title>MR Delete</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <!-- Left Section-->
+      <div class="left-section">
+        <img class="PAH-logo" src="images/logo.jpg" alt="" />
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <main>
+      <h1>DISPLAY INFO HERE</h1>
+
+      <!-- Delete Medical Record -->
+      <h2>Delete Medical Record</h2>
+      <form id="deleteMedicalRecordForm">
+        <label for="medicalIDToDelete">Medical ID:</label>
+        <input
+          type="number"
+          id="medicalIDToDelete"
+          name="medicalIDToDelete"
+          placeholder="Enter Medical Record ID"
+          min="1"
+        />
+
+        <br />
+        <br />
+        <button type="button" onclick="deleteMedicalRecord()">Delete</button>
+
+        <script>
+          function deleteMedicalRecord() {
+            // Implement the logic for deleting medical records
+            // Example: alert("Medical record deleted!");
+          }
+        </script>
+      </form>
+    </main>
+  </body>
+</html>

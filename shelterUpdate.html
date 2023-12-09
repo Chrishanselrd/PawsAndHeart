@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/header.css" />
+
+    <title>Shelter Update</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <!-- Left Section-->
+      <div class="left-section">
+        <img class="PAH-logo" src="images/logo.jpg" alt="" />
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <main>
+      <!-- Update Medical Record -->
+      <h2>Update Shelter</h2>
+      <form id="updateShelter">
+        <label for="shelterID">Shelter ID:</label>
+        <input
+          type="number"
+          id="shelterID"
+          name="shelterID"
+          placeholder="Enter shelter ID"
+          min="1"
+        />
+
+        <br />
+        <label for="shelterLocation">Updated Location:</label>
+        <input
+          type="text"
+          id="shelterLocation"
+          name="shelterLocation"
+          placeholder="Enter shelter location"
+        />
+
+        <br />
+        <br />
+        <button type="button" onclick="updateShelter()">Update</button>
+      </form>
+
+      <script>
+        function updateShelter() {
+          // Perform the search using JavaScript or make an AJAX request to a server
+          // Update the #searchResults div with the search results
+          // For simplicity, let's just alert a message for now
+          alert("Search functionality is not implemented in this example.");
+        }
+      </script>
+    </main>
+  </body>
+</html>

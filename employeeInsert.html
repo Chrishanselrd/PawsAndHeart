@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts (Include your font links here) -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/header.css" />
+
+    <title>Employee Insert</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <!-- Left Section-->
+      <div class="left-section">
+        <img class="PAH-logo" src="images/logo.jpg" alt="" />
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section">
+        <!-- Add content if needed -->
+      </div>
+
+      <!-- Right section -->
+      <div class="right-section">
+        <!-- Add content if needed -->
+      </div>
+    </header>
+
+    <main>
+      <!-- name , ssn, wage, position, sid-->
+      <h1>Employee Insert</h1>
+      <form id="employeeInsertForm">
+        <label for="employeeName">Name:</label>
+        <input
+          type="text"
+          id="employeeName"
+          name="employeeName"
+          placeholder="Enter employee name"
+          required
+        />
+
+        <label for="employeeSSN">SSN:</label>
+        <input
+          type="number"
+          id="employeeSSN"
+          name="employeeSSN"
+          placeholder="Enter employee SSN"
+          required
+        />
+
+        <label for="employeeWage">Wage:</label>
+        <input
+          type="number"
+          id="employeeWage"
+          name="employeeWage"
+          placeholder="Enter employee wage"
+          required
+        />
+
+        <label for="employeePosition">Position:</label>
+        <input
+          type="text"
+          id="employeePosition"
+          name="employeePosition"
+          placeholder="Enter employee position"
+          required
+        />
+
+        <label for="employeeSID">SID:</label>
+        <input
+          type="number"
+          id="employeeSID"
+          name="employeeSID"
+          placeholder="Enter employee SID"
+          required
+        />
+
+        <button type="button" onclick="insertEmployee()">
+          Insert Employee
+        </button>
+      </form>
+
+      <script>
+        function insertEmployee() {}
+      </script>
+    </main>
+  </body>
+</html>
