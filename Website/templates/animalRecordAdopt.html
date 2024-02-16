@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts (Include your font links here if needed) -->
+
+    <!-- CSS stylesheets -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header.css') }}"
+    />
+
+    <!-- Title -->
+    <title>Adopt Animal</title>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Left Section-->
+      <div class="left-section">
+        <!-- PAH Logo -->
+        <img
+          class="PAH-logo"
+          src="{{ url_for('get_image', image_name='logo.jpg') }}"
+          alt="PAH Logo"
+        />
+
+        <!-- Logo Title -->
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+      <!-- Add Adopter Form -->
+      <h1>Adoption Form</h1>
+      <form action="{{ url_for('addAdopter') }}" id="addAdopter" method="post">
+        <!-- Adopter Name Input -->
+        <label for="adopterName">Adopter Name:</label>
+        <input
+          type="text"
+          id="adopterName"
+          name="adopterName"
+          placeholder="Adopter Name"
+        />
+
+        <br />
+
+        <!-- Adopter Age Input -->
+        <label for="adopterAge">Adopter Age:</label>
+        <input
+          type="number"
+          id="adopterAge"
+          name="adopterAge"
+          placeholder="Adopter Age"
+          min="18"
+        />
+
+        <br />
+
+        <!-- Adopter Address Input -->
+        <label for="adopterAddress">Adopter Address:</label>
+        <input
+          type="text"
+          id="adopterAddress"
+          name="adopterAddress"
+          placeholder="Adopter Address"
+        />
+
+        <br />
+
+        <!-- Adopter Phone Number Input -->
+        <label for="adopterPhone">Phone number:</label>
+        <input
+          type="text"
+          id="adopterPhone"
+          name="adopterPhone"
+          placeholder="Adopter Phone number"
+        />
+
+        <br />
+
+        <!-- Animal ID Input -->
+        <label for="animalID">Animal ID:</label>
+        <input
+          type="number"
+          id="animalID"
+          name="animalID"
+          placeholder="Animal ID"
+          min="1"
+        />
+
+        <br />
+        <br />
+        <!-- Adopt Button -->
+        <button type="submit">Adopt</button>
+      </form>
+    </main>
+
+    <!-- Back Button Section -->
+    <br />
+    <br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('employee_page') }}">Back</a>
+    </div>
+  </body>
+</html>

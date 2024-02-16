@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts (Include your font links here if needed) -->
+
+    <!-- CSS stylesheets -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header.css') }}"
+    />
+
+    <!-- Title -->
+    <title>AR Insert</title>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Left Section -->
+      <div class="left-section">
+        <!-- PAH Logo -->
+        <img
+          class="PAH-logo"
+          src="{{ url_for('get_image', image_name='logo.jpg') }}"
+          alt="PAH Logo"
+        />
+
+        <!-- Logo Title -->
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section">
+        <!-- Add content if needed -->
+      </div>
+
+      <!-- Right section -->
+      <div class="right-section">
+        <!-- Add content if needed -->
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+      <!-- Insert Animal Form -->
+      <h1>Insert Animal</h1>
+      <form action="{{ url_for('addAnimal') }}" method="post">
+        <!-- Animal Name Input -->
+        <label for="animalName">Name:</label>
+        <input
+          type="text"
+          id="animalName"
+          name="animalName"
+          placeholder="Enter name"
+          required
+        />
+
+        <!-- Animal Age Input -->
+        <label for="animalAge">Age:</label>
+        <input
+          type="number"
+          id="animalAge"
+          name="animalAge"
+          placeholder="Enter age"
+          required
+        />
+
+        <!-- Animal Breed Input -->
+        <label for="animalBreed">Breed:</label>
+        <input
+          type="text"
+          id="animalBreed"
+          name="animalBreed"
+          placeholder="Enter breed"
+          required
+        />
+
+        <!-- Animal Type Selection -->
+        <label for="animalType">Animal Type:</label>
+        <select id="animalType" name="animalType">
+          <option value="Bunny">Bunny</option>
+          <option value="Cat">Cat</option>
+          <option value="Dog">Dog</option>
+          <!-- Add more options as needed -->
+        </select>
+
+        <!-- Shelter ID Input -->
+        <label for="shelterID">Shelter ID:</label>
+        <input
+          type="number"
+          id="shelterID"
+          name="shelterID"
+          placeholder="Enter shelter ID"
+          required
+        />
+
+        <!-- Insert Record Button -->
+        <button type="submit">Insert Record</button>
+      </form>
+    </main>
+
+    <!-- Back Button Section -->
+    <br />
+    <br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('employee_page') }}">Back</a>
+    </div>
+  </body>
+</html>

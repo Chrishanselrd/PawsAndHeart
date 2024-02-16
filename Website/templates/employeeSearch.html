@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header.css') }}"
+    />
+
+    <title>Search Employee</title>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Left Section -->
+      <div class="left-section">
+        <img
+          class="PAH-logo"
+          src="{{ url_for('get_image', image_name='logo.jpg') }}"
+          alt="PAH Logo"
+        />
+
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+      <h1>Search Employee</h1>
+
+      <!-- Search Form -->
+      <form
+        action="{{ url_for('searchEmployee') }}"
+        id="searchEmployeeForm"
+        method="pget"
+      >
+        <br />
+        <label for="EID">Employee ID:</label>
+        <input
+          type="number"
+          id="EID"
+          name="EID"
+          placeholder="Enter Employee ID"
+          required
+        />
+
+        <br />
+        <br />
+        <button type="submit">Display</button>
+      </form>
+
+      <!-- Display Data Section -->
+      <div id="display-data-div">
+        <h1>Shelter Information</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>SSN</th>
+              <th>Position</th>
+              <th>Shelter ID</th>
+              <th>Starting Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in things %}
+            <tr>
+              <td>{{ row.E_ID }}</td>
+              <td>{{ row.E_Name }}</td>
+              <td>{{ row.E_SSN }}</td>
+              <td>{{ row.E_Position }}</td>
+              <td>{{ row.S_ID }}</td>
+              <td>{{ row.startDate }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Back Button -->
+    <br />
+    <br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('admin_page') }}">Back</a>
+    </div>
+  </body>
+</html>

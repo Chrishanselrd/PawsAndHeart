@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header.css') }}"
+    />
+
+    <title>Admin Console</title>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Left Section -->
+      <div class="left-section">
+        <img
+          class="PAH-logo"
+          src="{{ url_for('get_image', image_name='logo.jpg') }}"
+          alt="PAH Logo"
+        />
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+      <h1>Admin Console</h1>
+      <div class="admin-container">
+        <!-- Shelter Container -->
+        <div class="shelter-container">
+          <p>Shelter Record</p>
+          <a class="button" href="{{ url_for('viewShelter') }}"
+            >Display Shelters</a
+          >
+          <br /><br />
+          <a class="button" href="{{ url_for('addShelter') }}">Insert</a>
+          <br /><br />
+          <a class="button" href="{{ url_for('deleteShelter') }}">Delete</a>
+          <br /><br />
+          <a class="button" href="{{ url_for('updateShelter') }}">Update</a>
+        </div>
+
+        <!-- Employee Container -->
+        <div class="employee-container">
+          <p>Employee Record</p>
+          <a class="button" href="{{ url_for('displayEmployee') }}"
+            >Display All Employees</a
+          >
+          <br /><br />
+          <a class="button" href="{{ url_for('searchEmployee') }}"
+            >Search Employee</a
+          >
+          <br /><br />
+          <a class="button" href="{{ url_for('addEmployee') }}">Insert</a>
+          <br /><br />
+          <a class="button" href="{{ url_for('deleteEmployee') }}">Delete</a>
+          <br /><br />
+          <a class="button" href="{{ url_for('updateEmployee') }}">Update</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Back Button -->
+    <br /><br /><br /><br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('index') }}">Back</a>
+    </div>
+  </body>
+</html>

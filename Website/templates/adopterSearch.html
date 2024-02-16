@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>Paws and Hearts</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Roboto Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Hedvig Letters Serif Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Left Section-->
+      <div class="left-section">
+        <img
+          class="PAH-logo"
+          src="{{ url_for('get_image', image_name='logo.jpg') }}"
+          alt="PAH Logo"
+        />
+
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+      <!-- Display Adopter Information -->
+      <div id="display-data-div">
+        <h1>Adopter Information</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Adopter ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Address</th>
+              <th>Phone number</th>
+              <th>Animal ID</th>
+              <th>Animal Name</th>
+              <th>Date of adoption</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Loop through adopter data -->
+            {% for row in things %}
+            <tr>
+              <td>{{ row.AD_ID }}</td>
+              <td>{{ row.AD_Name }}</td>
+              <td>{{ row.AD_Age }}</td>
+              <td>{{ row.AD_Address }}</td>
+              <td>{{ row.AD_Phone_number }}</td>
+              <td>{{ row.A_ID }}</td>
+              <td>{{ row.A_Name }}</td>
+              <td>{{ row.Date_of_adoption }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Adopter Record Actions -->
+      <p>Adopter Record</p>
+      <a class="button" href="{{ url_for('adopter_delete_page') }}">Delete</a>
+      <a class="button" href="{{ url_for('adopter_update_page') }}">Update</a>
+    </main>
+
+    <!-- Back Button Section -->
+    <br />
+    <br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('employee_page') }}">Back</a>
+    </div>
+  </body>
+</html>

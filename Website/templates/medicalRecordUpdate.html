@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header.css') }}"
+    />
+
+    <title>MR Update</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <!-- Left Section-->
+      <div class="left-section">
+        <img
+          class="PAH-logo"
+          src="{{ url_for('get_image', image_name='logo.jpg') }}"
+          alt="PAH Logo"
+        />
+
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <main>
+      <h1>DISPLAY ANIMAL INFO HERE</h1>
+
+      <!-- Update Medical Record -->
+      <h2>Update Medical Record</h2>
+      <form
+        action="{{ url_for('updateMedicalRecord') }}"
+        id="updateMedicalRecordForm"
+        method="post"
+      >
+        <label for="medicalIDToUpdate">Medical ID:</label>
+        <input
+          type="number"
+          id="medicalIDToUpdate"
+          name="medicalIDToUpdate"
+          placeholder="Enter medical ID"
+          min="1"
+        />
+
+        <br />
+        <label for="updatedDiagnosis">Updated Diagnosis:</label>
+        <textarea
+          id="updatedDiagnosis"
+          name="updatedDiagnosis"
+          placeholder="Enter updated diagnosis"
+          rows="4"
+          cols="50"
+        ></textarea>
+
+        <br />
+        <br />
+        <button type="submit">Update</button>
+      </form>
+    </main>
+    <br />
+    <br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('employee_page') }}">Back</a>
+    </div>
+  </body>
+</html>

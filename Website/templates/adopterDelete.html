@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts (Include your font links here) -->
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header.css') }}"
+    />
+
+    <title>Adopter Delete</title>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Left Section-->
+      <div class="left-section">
+        <img
+          class="PAH-logo"
+          src="{{ url_for('get_image', image_name='logo.jpg') }}"
+          alt="PAH Logo"
+        />
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section">
+        <!-- Add content if needed -->
+      </div>
+
+      <!-- Right section -->
+      <div class="right-section">
+        <!-- Add content if needed -->
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+      <h2>Delete Adopter</h2>
+
+      <!-- Delete Adopter Form -->
+      <form
+        action="{{ url_for('deleteAdopter') }}"
+        id="deleteAdopterForm"
+        method="post"
+      >
+        <label for="adopterID">Adopter ID:</label>
+        <input
+          type="number"
+          id="adopterID"
+          name="adopterID"
+          placeholder="Enter Adopter ID"
+          min="1"
+        />
+
+        <br />
+        <br />
+        <button type="submit">Delete</button>
+      </form>
+    </main>
+
+    <!-- Back Button Section -->
+    <br />
+    <br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('employee_page') }}">Back</a>
+    </div>
+  </body>
+</html>

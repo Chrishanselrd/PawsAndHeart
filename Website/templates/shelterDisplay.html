@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}"/>
+
+    <title>Display Employee</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <!-- Left Section-->
+      <div class="left-section">
+        <img class="PAH-logo" src="{{ url_for('get_image', image_name='logo.jpg') }}" alt="PAH Logo" />
+
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <main>
+      <div id="display-data-div" >
+        <h1>Shelter Information</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Number of Animals</th>
+            <th>Number of Employees</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in things %}
+          <tr>
+            <td>{{ row.S_ID }}</td>
+            <td>{{ row.S_Name }}</td>
+            <td>{{ row.S_Location }}</td>
+            <td>{{ row.AnimalCount }}</td>
+            <td>{{ row.EmployeeCount }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      </div>
+
+    </main>
+    <br />
+    <br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('admin_page') }}">Back</a>
+    </div>
+  </body>
+</html>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts (if any) -->
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header.css') }}"
+    />
+
+    <title>Adopter Console</title>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Left Section -->
+      <div class="left-section">
+        <img
+          class="PAH-logo"
+          src="{{ url_for('get_image', image_name='logo.jpg') }}"
+          alt="PAH Logo"
+        />
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+      <h1>Adopter Console</h1>
+
+      <!-- Display Data Section -->
+      <div id="display-data-div">
+        <h2>Animal Information</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Animal ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Type</th>
+              <th>Breed</th>
+              <th>Shelter Name</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in things %}
+            <tr>
+              <td>{{ row.A_ID }}</td>
+              <td>{{ row.A_name }}</td>
+              <td>{{ row.A_Age }}</td>
+              <td>{{ row.A_Animal_type }}</td>
+              <td>{{ row.A_Breed }}</td>
+              <td>{{ row['Shelter Name'] }}</td>
+              <td>{{ row['Shelter Location'] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Search Form Section -->
+      <br /><br /><br />
+      <form
+        action="{{ url_for('searchAnimal') }}"
+        id="searchForm"
+        method="post"
+      >
+        <label for="animalType">Animal Type:</label>
+        <select id="animalType" name="animalType">
+          <option value="Bunny">Bunny</option>
+          <option value="Cat">Cat</option>
+          <option value="Dog">Dog</option>
+          <!-- Add more options as needed -->
+        </select>
+
+        <br />
+        <label for="age">Age:</label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          placeholder="Enter maximum age"
+          min="1"
+          max="20"
+        />
+
+        <br />
+        <br />
+        <button type="submit">Search</button>
+      </form>
+    </main>
+
+    <!-- Back Button Section -->
+    <br />
+    <br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('index') }}">Back</a>
+    </div>
+  </body>
+</html>

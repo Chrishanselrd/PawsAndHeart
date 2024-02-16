@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts (Include your font links here if needed) -->
+
+    <!-- CSS stylesheets -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header.css') }}"
+    />
+
+    <!-- Title -->
+    <title>Adopter Update</title>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Left Section -->
+      <div class="left-section">
+        <!-- PAH Logo -->
+        <img
+          class="PAH-logo"
+          src="{{ url_for('get_image', image_name='logo.jpg') }}"
+          alt="PAH Logo"
+        />
+
+        <!-- Logo Title -->
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+      <!-- Update Adopter Form -->
+      <h2>Update Adopter</h2>
+      <form
+        action="{{ url_for('updateAdopter') }}"
+        id="updateAdopterForm"
+        method="post"
+      >
+        <!-- Adopter ID Input -->
+        <label for="adopterID">Adopter ID:</label>
+        <input
+          type="number"
+          id="adopterID"
+          name="adopterID"
+          placeholder="Enter adopter ID"
+          min="1"
+        />
+
+        <br />
+
+        <!-- Updated Name Input -->
+        <label for="adopterName">Updated Name:</label>
+        <input
+          type="text"
+          id="adopterName"
+          name="adopterName"
+          placeholder="Enter adopter Name"
+        />
+
+        <br />
+
+        <!-- Updated Age Input -->
+        <label for="adopterAge">Updated Age:</label>
+        <input
+          type="number"
+          id="adopterAge"
+          name="adopterAge"
+          placeholder="Enter adopter Age"
+          min="1"
+        />
+
+        <br />
+
+        <!-- Updated Address Input -->
+        <label for="adopterAddress">Updated Address:</label>
+        <input
+          type="text"
+          id="adopterAddress"
+          name="adopterAddress"
+          placeholder="Enter adopter address"
+        />
+
+        <br />
+
+        <!-- Updated Phone Number Input -->
+        <label for="adopterPhone">Updated Phone Number:</label>
+        <input
+          type="text"
+          id="adopterPhone"
+          name="adopterPhone"
+          placeholder="Enter adopter phone number"
+        />
+
+        <br />
+        <br />
+
+        <!-- Update Button -->
+        <button type="submit">Update</button>
+      </form>
+    </main>
+
+    <!-- Back Button Section -->
+    <br />
+    <br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('employee_page') }}">Back</a>
+    </div>
+  </body>
+</html>

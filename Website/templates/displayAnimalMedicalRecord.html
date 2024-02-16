@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>Paws and Hearts</title>
+
+    <!-- Fonts -->
+
+    <!-- CSS stylesheets -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/header.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Left Section -->
+      <div class="left-section">
+        <!-- PAH Logo -->
+        <img
+          class="PAH-logo"
+          src="{{ url_for('get_image', image_name='logo.jpg') }}"
+          alt="PAH Logo"
+        />
+
+        <!-- Logo Title -->
+        <p id="logo-title">Paws and Hearts</p>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="middle-section"></div>
+
+      <!-- Right section -->
+      <div class="right-section"></div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+      <!-- Display Animal Information -->
+      <div id="display-data-div">
+        <h1>ANIMAL INFO</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Animal ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Type</th>
+              <th>Breed</th>
+              <th>Shelter Name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Loop through data and display rows -->
+            {% for row in things %}
+            <tr>
+              <td>{{ row.A_ID }}</td>
+              <td>{{ row.A_name }}</td>
+              <td>{{ row.A_Age }}</td>
+              <td>{{ row.A_Animal_type }}</td>
+              <td>{{ row.A_Breed }}</td>
+              <td>{{ row.S_Name }}</td>
+              <td>{{ row.M_Health_status }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Insert Button -->
+      <br />
+      <a class="button" href="{{ url_for('ar_insert_page') }}">Insert</a>
+      <br />
+      <br />
+    </main>
+
+    <!-- Back Button Section -->
+    <br />
+    <br />
+    <div class="back-button">
+      <a class="button" href="{{ url_for('employee_page') }}">Back</a>
+    </div>
+  </body>
+</html>
